@@ -1,0 +1,4 @@
+/csma_cd/*.log
+/bit_stuffing/decoded
+/bit_stuffing/out
+/bit_stuffing/test

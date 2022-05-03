@@ -1,0 +1,754 @@
+<!DOCTYPE html><html><head>
+      <title>sprawozdanie</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/flowyh/.vscode-server/extensions/shd101wyy.markdown-preview-enhanced-0.6.2/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="sprawozdanie-lista-nr-3httpscspwreduplbojko2122_2latotsshtml">Sprawozdanie <a href="https://cs.pwr.edu.pl/bojko/2122_2lato/tss.html">Lista nr 3</a></h1>
+
+<table>
+<thead>
+<tr>
+<th>Przedmiot</th>
+<th>Technologie sieciowe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prowadz&#x105;cy</td>
+<td>Mgr in&#x17C;. Dominik Bojko</td>
+</tr>
+<tr>
+<td>Autor</td>
+<td>Maciej Bazela</td>
+</tr>
+<tr>
+<td>Indeks</td>
+<td>261743</td>
+</tr>
+<tr>
+<td>Grupa</td>
+<td>Czw. 15:15-16:55</td>
+</tr>
+<tr>
+<td>Kod grupy</td>
+<td>K03-76c</td>
+</tr>
+</tbody>
+</table>
+<p>Kod &#x17A;r&#xF3;d&#x142;owy znajduje si&#x119; w repozytorium na moim <a href="https://github.com/Flowyh/ts2022">githubie</a>.</p>
+<h4 class="mume-header" id="1-wymagania">1. Wymagania</h4>
+
+<p>Celem tej listy by&#x142;o zaimplementowanie dw&#xF3;ch program&#xF3;w:</p>
+<ul>
+<li>pierwszy z nich dotyczy&#x142; ramkowania z <a href="https://en.wikipedia.org/wiki/Bit_stuffing">rozpychaniem bit&#xF3;w</a>,</li>
+<li>drugi mia&#x142; symulowa&#x107; ethernetow&#x105; metod&#x119; dost&#x119;pu do medium transmisyjnego <a href="https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_detection">CSMA/CD</a>.</li>
+</ul>
+<h4 class="mume-header" id="11-%C5%9Brodowisko">1.1 &#x15A;rodowisko</h4>
+
+<p>Do rozwi&#x105;zania tych zada&#x144; wykorzysta&#x142;em j&#x119;zyk <a href="https://julialang.org/">Julia</a>.</p>
+<h4 class="mume-header" id="2-ramkowanie-z-rozpychaniem-bit%C3%B3w">2. Ramkowanie z rozpychaniem bit&#xF3;w</h4>
+
+<h5 class="mume-header" id="21-struktura-ramki">2.1 Struktura ramki</h5>
+
+<p>Ramki tworzone zgodnie z zasad&#x105; rozpychania bit&#xF3;w maj&#x105; okre&#x15B;lon&#x105; struktur&#x119;:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>[flaga graniczna|nag&#x142;&#xF3;wek|dane|crc|flaga graniczna]
+</code></pre><p>Flagom granicznym odpowiada ci&#x105;g bit&#xF3;w: 01111110</p>
+<p>Danymi, kt&#xF3;re b&#x119;dziemy ramkowa&#x107;, b&#x119;d&#x105; sczytane z pliku bajty.</p>
+<p>Dla przejrzysto&#x15B;ci zakodowanych plik&#xF3;w wynikowych przyj&#x105;&#x142;em, &#x17C;e zawsze sczytujemy okre&#x15B;lon&#x105; ilo&#x15B;&#x107; bit&#xF3;w z pliku, np. <code>FRAME_SIZE=32</code>.</p>
+<h5 class="mume-header" id="22-rozpychanie-bit%C3%B3w">2.2 Rozpychanie bit&#xF3;w</h5>
+
+<p>&quot;Rozpychanie&quot; bit&#xF3;w polega na dodawaniu zerowego bitu po ka&#x17C;dej pi&#x119;cio-elementowej sekwencji jedynek.</p>
+<p>Na przyk&#x142;ad, sczytuj&#x105;c z pliku ci&#x105;g &quot;}}}}&quot; i zamieniaj&#x105;&#x107; poszczeg&#xF3;lne litery na ich warto&#x15B;ci w UTF8:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>01111101 01111101 01111101 01111101
+</code></pre><p>po &quot;rozpychaniu&quot; otrzymamy:</p>
+<pre data-role="codeBlock" data-info="md" class="language-gfm"><code>011111001 011111001 011111001 011111001
+</code></pre><h5 class="mume-header" id="23-crc">2.3 CRC</h5>
+
+<p>Liczenie pola kontrolnego CRC pozostawi&#x142;em osobom ode mnie m&#x105;drzejszym.</p>
+<p>Bardzo wygodny ku temu okaza&#x142; si&#x119; fakt, &#x17C;e Julia ma wbudowan&#x105; funkcj&#x119; do obliczania CRC32c:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">julia<span class="token operator">&gt;</span> test <span class="token operator">=</span> <span class="token string">&quot;}}}}&quot;</span>
+<span class="token string">&quot;}}}}&quot;</span>
+
+julia<span class="token operator">&gt;</span> Base<span class="token punctuation">.</span>_crc32c<span class="token punctuation">(</span>test<span class="token punctuation">)</span>
+<span class="token number">0x693bb197</span>
+</pre><p>Sczytane bity z pliku wej&#x15B;ciowego zamienia&#x142;em na String, liczy&#x142;em ich pole kontrolne CRC i zamienia&#x142;em z powrotem na bity:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia"><span class="token keyword keyword-function">function</span> crc32_to_bits<span class="token punctuation">(</span>str<span class="token punctuation">::</span>String<span class="token punctuation">)</span><span class="token punctuation">::</span>BitVector
+  crc<span class="token punctuation">::</span>UInt32 <span class="token operator">=</span> Base<span class="token punctuation">.</span>_crc32c<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+  <span class="token keyword keyword-return">return</span> uint_to_bits<span class="token punctuation">(</span>crc<span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-end">end</span>
+</pre><h5 class="mume-header" id="24-kodowanie-ramek">2.4 Kodowanie ramek</h5>
+
+<p>Kodowanie ci&#x105;gu znak&#xF3;w na ramki, polega&#x142;o na:</p>
+<ul>
+<li>czytaniu <code>FRAME_SIZE / 8</code> bajt&#xF3;w z pliku,</li>
+<li>liczeniu CRC,</li>
+<li>&quot;rozpychaniu&quot; pi&#x119;cio-elementowych sekwencji jedynek</li>
+<li>i opakowywaniu wszystkiego w ramki graniczne.</li>
+</ul>
+<p>Schemat powtarzamy dop&#xF3;ki nie sczytali&#x15B;my wszystkich bajt&#xF3;w z pliku.</p>
+<p>Wynikowe ramki dla czytelno&#x15B;ci zamienia&#x142;em na String zer i jedynek i zapisywa&#x142;em do pliku wyj&#x15B;ciowego, podanego jako argument funkcji:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia"><span class="token keyword keyword-function">function</span> encode_str<span class="token punctuation">(</span>input<span class="token punctuation">::</span>IO<span class="token punctuation">,</span> output<span class="token punctuation">::</span>IO<span class="token punctuation">)</span>
+  bytes <span class="token operator">=</span> Vector<span class="token punctuation">{</span>UInt8<span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  bits <span class="token operator">=</span> BitVector<span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-while">while</span> <span class="token operator">!</span><span class="token punctuation">(</span>eof<span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    bytes <span class="token operator">=</span> read_n_bytes<span class="token punctuation">(</span>input<span class="token punctuation">,</span> fld<span class="token punctuation">(</span>FRAME_SIZE<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-for">for</span> byte <span class="token keyword keyword-in">in</span> bytes
+      push<span class="token operator">!</span><span class="token punctuation">(</span>bits<span class="token punctuation">,</span> uint_to_bits<span class="token punctuation">(</span>byte<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-end">end</span>
+    crc_bits <span class="token operator">=</span> crc32_to_bits<span class="token punctuation">(</span>bytes_to_str<span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># CRC</span>
+    <span class="token keyword keyword-for">for</span> crc_bit <span class="token keyword keyword-in">in</span> crc_bits
+      push<span class="token operator">!</span><span class="token punctuation">(</span>bits<span class="token punctuation">,</span> crc_bit<span class="token punctuation">)</span>
+    <span class="token keyword keyword-end">end</span>
+    bits_str <span class="token operator">=</span> bits_to_str<span class="token punctuation">(</span>bits<span class="token punctuation">)</span>
+    stuffed_str<span class="token punctuation">::</span>String <span class="token operator">=</span> replace<span class="token punctuation">(</span>bits_str<span class="token punctuation">,</span> <span class="token regex">r&quot;11111&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">s&quot;111110&quot;</span><span class="token punctuation">)</span> <span class="token comment"># Add guarding zeros</span>
+    write_str<span class="token punctuation">(</span>FRAME_EDGE <span class="token operator">*</span> stuffed_str <span class="token operator">*</span> FRAME_EDGE <span class="token operator">*</span> <span class="token string">&quot;\n&quot;</span><span class="token punctuation">,</span> output<span class="token punctuation">)</span> <span class="token comment"># Save frame to file</span>
+    empty<span class="token operator">!</span><span class="token punctuation">(</span>bits<span class="token punctuation">)</span>
+  <span class="token keyword keyword-end">end</span>
+<span class="token keyword keyword-end">end</span>
+</pre><h5 class="mume-header" id="25-dekodowanie-ramek">2.5 Dekodowanie ramek</h5>
+
+<p>Wczytanie zakodowanego pliku, polega&#x142;o na:</p>
+<ul>
+<li>wczytaniu ca&#x142;ego pliku jako String,</li>
+<li>zamianie flag granicznych (ci&#x105;g&#xF3;w &quot;01111110&quot;) na znak nie b&#x119;d&#x105;cy ani zerem ani jedynk&#x105; (np. &quot;|&quot;),</li>
+<li>usuni&#x119;ciu zer powsta&#x142;ych przez &quot;rozpychanie&quot; bit&#xF3;w,</li>
+<li>rozdzielenie Stringu na osobne ramki.</li>
+</ul>
+<p>Dla ka&#x17C;dej z ramek:</p>
+<ul>
+<li>zamieniamy ci&#x105;g znak&#xF3;w &quot;0&quot; i &quot;1&quot; z powrotem na bity,</li>
+<li>rozdzielamy dane od crc (wiemy, &#x17C;e crc ma 32 bity, dlatego mo&#x17C;emy bez problemu od siebie je oddzieli&#x107;),</li>
+<li>liczymy crc dla szczytanych bit&#xF3;w:
+<ul>
+<li>je&#x15B;li crc nie zgadza si&#x119; ze sczytanym crc lub liczba bit&#xF3;w danych nie jest pot&#x119;g&#x105; &#xF3;semki, odrzucamy ramk&#x119;,</li>
+<li>w przeciwnym przypadku zapisujemy zdekodowane dane do pliku wyj&#x15B;ciowego, podanego jako argument funkcji.</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="julia" class="language-julia"><span class="token keyword keyword-function">function</span> decode_str<span class="token punctuation">(</span>input<span class="token punctuation">::</span>IO<span class="token punctuation">,</span> output<span class="token punctuation">::</span>IO<span class="token punctuation">)</span>
+  input_str<span class="token punctuation">::</span>String <span class="token operator">=</span> read<span class="token punctuation">(</span>input<span class="token punctuation">,</span> String<span class="token punctuation">)</span>
+  input_str <span class="token operator">=</span> replace<span class="token punctuation">(</span>input_str<span class="token punctuation">,</span> <span class="token regex">r&quot;01111110&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">s&quot;|&quot;</span><span class="token punctuation">)</span> <span class="token comment"># Replace frames with |</span>
+  input_str <span class="token operator">=</span> replace<span class="token punctuation">(</span>input_str<span class="token punctuation">,</span> <span class="token regex">r&quot;111110&quot;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">s&quot;11111&quot;</span><span class="token punctuation">)</span> <span class="token comment"># Remove guarding zeroes</span>
+  frames <span class="token operator">=</span> split<span class="token punctuation">(</span>input_str<span class="token punctuation">,</span> <span class="token string">&quot;|&quot;</span><span class="token punctuation">)</span>
+  bits <span class="token operator">=</span> BitVector<span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-for">for</span> frame <span class="token keyword keyword-in">in</span> frames
+    frame <span class="token operator">=</span> strip<span class="token punctuation">(</span>frame<span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>isempty<span class="token punctuation">(</span>frame<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword keyword-continue">continue</span> <span class="token keyword keyword-end">end</span>
+    <span class="token keyword keyword-for">for</span> bit <span class="token keyword keyword-in">in</span> frame
+      push<span class="token operator">!</span><span class="token punctuation">(</span>bits<span class="token punctuation">,</span> parse<span class="token punctuation">(</span>Int<span class="token punctuation">,</span> bit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-end">end</span>
+    data <span class="token operator">=</span> bits<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token keyword keyword-end">end</span><span class="token operator">-</span>FRAME_SIZE<span class="token punctuation">]</span>
+    crc <span class="token operator">=</span> bits<span class="token punctuation">[</span><span class="token keyword keyword-end">end</span><span class="token operator">-</span>FRAME_SIZE<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token keyword keyword-end">end</span><span class="token punctuation">]</span>
+    <span class="token keyword keyword-try">try</span>
+      data_bytes <span class="token operator">=</span> bits_to_bytes<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>crc <span class="token operator">!=</span> crc32_to_bits<span class="token punctuation">(</span>bytes_to_str<span class="token punctuation">(</span>data_bytes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        throw<span class="token punctuation">(</span><span class="token string">&quot;CRC32 check failed&quot;</span><span class="token punctuation">)</span>
+      <span class="token keyword keyword-else">else</span>
+        <span class="token keyword keyword-for">for</span> byte <span class="token keyword keyword-in">in</span> data_bytes
+          write_byte<span class="token punctuation">(</span>byte<span class="token punctuation">,</span> output<span class="token punctuation">)</span>
+        <span class="token keyword keyword-end">end</span>
+      <span class="token keyword keyword-end">end</span>
+    <span class="token keyword keyword-catch">catch</span> e
+      <span class="token keyword keyword-println">println</span><span class="token punctuation">(</span><span class="token string">&quot;Error: $e. Frame malformed, omitting.&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-end">end</span>
+    empty<span class="token operator">!</span><span class="token punctuation">(</span>bits<span class="token punctuation">)</span>
+  <span class="token keyword keyword-end">end</span>
+<span class="token keyword keyword-end">end</span>
+</pre><h5 class="mume-header" id="26-uruchomienie-programu">2.6 Uruchomienie programu:</h5>
+
+<p>Program przyjmuje 3 argumenty:</p>
+<ul>
+<li>&#x15B;cie&#x17C;ka pliku wej&#x15B;ciowego</li>
+<li>&#x15B;cie&#x17C;ka pliku wyj&#x15B;ciowego</li>
+<li>tryb:
+<ul>
+<li>enc - kodowanie</li>
+<li>dec - dekodowanie</li>
+<li>chk - sprawdzenie czy dwa pliki s&#x105; takie same</li>
+</ul>
+</li>
+</ul>
+<p>Przyk&#x142;ad uruchomienia:</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash">julia bit_stuffing.jl <span class="token builtin class-name">test</span> out enc <span class="token comment"># kodowanie</span>
+julia bit_stuffing.jl out decoded dec <span class="token comment"># dekodowanie</span>
+julia bit_stuffing.jl <span class="token builtin class-name">test</span> decoded chk <span class="token comment"># sprawdzenie</span>
+</pre><h5 class="mume-header" id="27-przyk%C5%82ad-dzia%C5%82ania">2.7 Przyk&#x142;ad dzia&#x142;ania:</h5>
+
+<h5 class="mume-header" id="271-poprawne-ramki">2.7.1 Poprawne ramki:</h5>
+
+<p>Plik testowy: test</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ cat test
+Ala ma kota
+Kot ma Al&#x119;
+Zawsze si&#x119; zastanawia&#x142;em jak to jest mo&#x17C;liwe &#x17C;e kot ma Al&#x119;,
+przecie&#x17C; to Ala jest jego w&#x142;a&#x15B;cicielk&#x105;...
+
+</code></pre><p>Kodowanie:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ julia bit_stuffing.jl test out enc
+  0.076200 seconds (316.24 k allocations: 18.363 MiB, 97.78% compilation time)
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>$ cat out
+01111110010000010110110001100001001000000000110110101001011011000010010101111110
+01111110011011010110000100100000011010110110000001100011110010101110111001111110
+01111110011011110111010001100001000010101110101100100001111011001001001101111110
+01111110010010110110111101110100001000001100110001001001111001000001101101111110
+01111110011011010110000100100000010000010010101100111100011011000000100001111110
+01111110011011001100010010011001000010100001010000010100001101000101011001111110
+01111110010110100110000101110111011100110110011100011010101101101111001001111110
+011111100111101001100101001000000111001110010100010111101111100001010001101111110
+01111110011010011100010010011001001000000000001010001110110011101101111001111110
+011111100111101001100001011100110111010000101010011111011101001110100111001111110
+01111110011000010110111001100001011101110001000000001100100101001001101101111110
+011111100110100101100001110001011000001000101100110001001110101111100010101111110
+01111110011001010110110100100000011010101100001011000011101100001101010001111110
+01111110011000010110101100100000011101001101010001110110000011110111100001111110
+01111110011011110010000001101010011001010101010000011110011100011011110101111110
+01111110011100110111010000100000011011011101011010011010101001100100000101111110
+011111100110111110100010110111100011011001001100000101001001110110001011101111110
+0111111001101001011101110110010100100000110000001001111101111100011010100001111110
+01111110110001011011110001100101001000001100000001001010110100110000010101111110
+01111110011010110110111101110100001000000001101101101100111100001001000001111110
+01111110011011010110000100100000010000010010101100111100011011000000100001111110
+01111110011011001100010010011001001011000001001000001000010111010110000001111110
+011111100010000000001010011100000111001011000111100001101100001111101100101111110
+01111110011110100110010101100011011010010010010000010010011110010110100101111110
+011111100110010111000101101111000010000000101111100011011010100011010011101111110
+01111110011101000110111100100000010000010000000010111001110111001011100101111110
+01111110011011000110000100100000011010100100111101001101111000110101010101111110
+011111100110010101110011011101000010000011111011101000000011001100101000101111110
+011111100110101001100101011001110110111110010010101011101010011100110000001111110
+011111100010000001110111110000101100000101011001010110011110000110011001101111110
+011111100110000111000101100110110110001111001010101000111010001011011111001111110
+0111111001101001011000110110100101100101100010011111001111000101111101110001111110
+011111100110110001101011110001001000010110110101110011111000101011101011101111110
+01111110001011100010111000101110000010100100010101010101010001001010111001111110
+</code></pre><p>Dekodowanie:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ julia bit_stuffing.jl out decoded dec
+  0.000262 seconds (1.49 k allocations: 93.203 KiB)
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>$ cat decoded
+Ala ma kota
+Kot ma Al&#x119;
+Zawsze si&#x119; zastanawia&#x142;em jak to jest mo&#x17C;liwe &#x17C;e kot ma Al&#x119;,
+przecie&#x17C; to Ala jest jego w&#x142;a&#x15B;cicielk&#x105;...
+
+</code></pre><p>Sprawdzenie:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ julia bit_stuffing.jl test decoded chk
+Before encoding chekcsum (crc32c): 276902515
+After decoding chekcsum (crc32c): 276902515
+Are files the same? true
+</code></pre><h5 class="mume-header" id="272-zepsute-ramki">2.7.2 Zepsute ramki:</h5>
+
+<p>Pozamieniam i pousuwam par&#x119; bit&#xF3;w z pliku &quot;out&quot; z poprzedniegu przyk&#x142;adu:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$ cat decoded
+01111110010000010110110001100001001000000000110110101001011011000010010101111110
+01111110011011010110000100100000011010110110000001100011110010101110111001111110
+01111110011011110111010001100001000010101110101100100001111011001001001101111110
+0111111001001011011011111110100001000001100110001001001111001000001101101111110
+01111110011011010110000100100000010000010010101100111100011011000000100001111110
+01111110011011001100010010011001000010100001010000010100001101000101011001111110
+01111110010110100110000101110111011100110110011100011010101101101111001001111110
+011111100111101001100101001000000111001110010100010111101111100001010001101111110
+01111110011010011100010010011001001000000000001010001110110011101101111001111110
+01111110011110100110000101110011011101000010010011111011101001110100111001111110
+01111110011000010110111001100001011101110001000000001100100101001001101101111110
+011111100110100101100001110001011000001000101100110001001110101111100010101111110
+01111110011001010110110100100000011010101100001011000011101100001101010001111110
+0111111001100001011010100100000011101001101010001110110000011110111100001111110
+01111110011011110010000001001010011001010101010000011110011100011011110101111110
+01111110011100110111010000100000011011011101011010011010101001100100000101111110
+011111100110111110100010110111100011011001001100000101001001110110001011101111110
+0110011001101001011101110110010100100000110000001001111101111100011010100001111110
+01111110110001011011110001100101001000001100000001001010110100110000010101111110
+01111110011010110110111101110100001000000001101101101100111100001001000001111110
+01111110011011010110000100100000010000010010101100111100011011000000100001111110
+01111110011011001100010010011001001011000001001000001000010111010110000001111110
+011111100010000000001010011100000111001011000111100001101100001111101100101111110
+01111110011110100110010101100011011010010010010000010010011110010110100101111110
+011111100110010111000101101111000010000000101111100011011010100011010011101111110
+01111110011101000110111100100000010000010000000010111001110111001011100101111110
+01111110011011000110000100100000011010100100111101001101111000110101010101111110
+011111100110010101110011011101000010000011111011101000000011001100101000101111110
+011111100110101001100101011001110110111110010010101011101010011100110000001111110
+0111111100010000001110111110000101100000101011001010110011110000110011001101111110
+011111100110000111000101100110110110001111001010101000111010001011011111001111110
+0111111001101001011000110110100101100101100010011111001111000101111101110001111110
+011111100110110001101011110001001000010110110101110011111000101011101011101111110
+01111110001011100010111000101110000010100100010101010101010001001010111001111110
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>$ julia bit_stuffing.jl out decoded dec
+Error: Number of bits not a power of 8. Frame malformed, omitting.
+Error: Number of bits not a power of 8. Frame malformed, omitting.
+Error: Number of bits not a power of 8. Frame malformed, omitting.
+Error: CRC32 check failed. Frame malformed, omitting.
+Error: CRC32 check failed. Frame malformed, omitting.
+Error: CRC32 check failed. Frame malformed, omitting.
+  0.001191 seconds (1.48 k allocations: 90.422 KiB)
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>$ cat decoded
+Ala ma kota
+ma Al&#x119;
+Zawsze si&#x119; anawia&#x142;em jst mo&#x17C;l&#x17C;e kot ma Al&#x119;,
+przecie&#x17C; to Ala jest jegoa&#x15B;cicielk&#x105;...
+</code></pre><pre data-role="codeBlock" data-info class="language-"><code>$ julia bit_stuffing.jl test decoded chk
+Before encoding chekcsum (crc32c): 276902515
+After decoding chekcsum (crc32c): 1537098958
+Are files the same? false
+</code></pre><p>Jak wida&#x107;, program poprawnie wy&#x142;apuje b&#x142;&#x119;dne ramki i je odpowiednio pomija.</p>
+<h4 class="mume-header" id="3-symulacja-csmacd">3. Symulacja CSMA/CD</h4>
+
+<p>Do wykonania tego zadania, potrzebujemy zasymulowa&#x107; <strong>&#x142;&#x105;cze</strong> pomi&#x119;dzy nadaj&#x105;cymi <strong>urz&#x105;dzeniami</strong>/<strong>w&#x119;z&#x142;ami</strong>, nadaj&#x105;ce <strong>urz&#x105;dzenia</strong>/<strong>w&#x119;z&#x142;y</strong>, <strong>pakiety</strong> przesy&#x142;ane w sieci oraz <strong>jednostk&#x119; czasu</strong>, kt&#xF3;ra okre&#x15B;la co w danym momencie si&#x119; dzieje w sieci.</p>
+<p>W naszym przypadku symulowanym <strong>&#x142;&#x105;czem</strong> b&#x119;dzie tablica, a dok&#x142;adniej tablica tablic przesy&#x142;anych pakiet&#xF3;w.</p>
+<p>Ka&#x17C;da <strong>kom&#xF3;rka</strong> odpowiada po&#x142;o&#x17C;eniu danego urz&#x105;dzenia w sieci, tj. je&#x15B;li urz&#x105;dzenie podpi&#x119;te jest do <strong>kom&#xF3;rki</strong> 2, to urz&#x105;dzenie b&#x119;dzie &quot;przesy&#x142;a&#x107; pakiety&quot; w tablicy na lewo i na prawo od <strong>kom&#xF3;rki</strong> o indeksie 2.</p>
+<p>Jednostk&#x105; czasu w symulacji jest <strong>krok</strong>, a w danym kroku urz&#x105;dzenie mo&#x17C;e:</p>
+<ul>
+<li>spoczywa&#x107; (nic nie przesy&#x142;a&#x107;),</li>
+<li>rozpoczyna&#x107; nadawanie,</li>
+<li>kontynuowa&#x107; nadawanie,</li>
+<li>ko&#x144;czy&#x107; nadawanie</li>
+</ul>
+<p>W ka&#x17C;dym kroku dany <strong>pakiet</strong> jest propagowany po &#x142;&#x105;czu do <strong>s&#x105;siedniej kom&#xF3;rki</strong>/<strong>kom&#xF3;rek</strong>, odpowiednie urz&#x105;dzenia s&#x105; w&#x142;&#x105;czane/wy&#x142;&#x105;czane oraz wykrywane oraz wykrywane s&#x105; <strong>kolizje</strong>.</p>
+<p><strong>Kolizja</strong> nast&#x119;puje wtedy, kiedy urz&#x105;dzenie, kt&#xF3;re nadaje wykryje na swojej kom&#xF3;rce pakiet pochodz&#x105;cy z innego urz&#x105;dzenia. W takiej sytuacji obecnie nadawany pakiet jest przerywany, a po sieci rozes&#x142;any zostaje <strong>pakiet kolizyjny</strong>, kt&#xF3;ry informuje reszt&#x119; w&#x119;z&#x142;&#xF3;w o zaistnieniu <strong>kolizji</strong>.</p>
+<p><strong>Urz&#x105;dzenia</strong> nadaj&#x105;ce/<strong>w&#x119;z&#x142;y</strong> maj&#x105; nast&#x119;puj&#x105;ce atrybuty:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">@kwdef mutable <span class="token keyword keyword-struct">struct</span> Node
+  name<span class="token punctuation">::</span>String <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  position<span class="token punctuation">::</span>Int <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+  id<span class="token punctuation">::</span>Int <span class="token operator">=</span> position
+  idle<span class="token punctuation">::</span>Bool <span class="token operator">=</span> <span class="token boolean">true</span>
+  idle_time<span class="token punctuation">::</span>Int <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+  collision<span class="token punctuation">::</span>Bool <span class="token operator">=</span> <span class="token boolean">false</span>
+  detected_collisions<span class="token punctuation">::</span>Int <span class="token operator">=</span> <span class="token number">0</span>
+  frames<span class="token punctuation">::</span>Int <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+<span class="token keyword keyword-end">end</span>
+</pre><p>Gdzie:</p>
+<ul>
+<li><em>name</em> - nazwa w&#x119;z&#x142;a,</li>
+<li><em>position</em>- pozycja w tablicy,</li>
+<li><em>id</em> - unikalne id urz&#x105;dzenia (dla prostoty <em>id</em> = <em>position</em>),</li>
+<li><em>idle</em> - stan okre&#x15B;laj&#x105;cy czy urz&#x105;dzenie nadaje (False), czy jest w spoczynku (True)</li>
+<li><em>idle_time</em> - czas oczekiwania, przed nast&#x119;pnym nadawaniem,</li>
+<li><em>collision</em> - stan okre&#x15B;laj&#x105;cy czy urz&#x105;dzenie wykry&#x142;o kolizje,</li>
+<li><em>detected_collisions</em> - ilo&#x15B;&#x107; kolizji zaobserwowana przez dane urz&#x105;dzenie przed prawid&#x142;owym przes&#x142;aniem ca&#x142;ego pakietu,</li>
+<li><em>frames</em> - liczba pakiet&#xF3;w/ramek przesy&#x142;ana przez urz&#x105;dzenie, zanim przestanie w og&#xF3;le nadawa&#x107;.</li>
+</ul>
+<p>Pakiety okre&#x15B;laj&#x105; tylko 3 warto&#x15B;ci:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">@kwdef mutable <span class="token keyword keyword-struct">struct</span> NodePacket
+  node<span class="token punctuation">::</span>Node <span class="token operator">=</span> nothing
+  collision_packet<span class="token punctuation">::</span>Bool <span class="token operator">=</span> node<span class="token punctuation">.</span>collision
+  direction<span class="token punctuation">::</span>packet_directions
+<span class="token keyword keyword-end">end</span>
+</pre><ul>
+<li><em>node</em> - w&#x119;ze&#x142;/urz&#x105;dzenie, od kt&#xF3;rego pochodzi pakiet,</li>
+<li><em>collision_packet</em> - stan okre&#x15B;laj&#x105;cy, czy dany pakiet jest pakietem kolizyjnym,</li>
+<li><em>direction</em> - w kt&#xF3;rym kierunku rozchodzi si&#x119; pakiet (na lewo, na prawo, w obie strony).</li>
+</ul>
+<p>Ka&#x17C;dy pakiet musi mie&#x107; wystarczaj&#x105;c&#x105; wielko&#x15B;&#x107;, aby w przypadku kolizji mo&#x17C;na by&#x142;o j&#x105; wykry&#x107; przed przes&#x142;aniem kolejnego pakietu.</p>
+<p>W takim razie pakiet, b&#x119;dzie mia&#x142; wielko&#x15B;&#x107; wystarczaj&#x105;c&#x105;, aby dwukrotnie przej&#x15B;&#x107; przez ca&#x142;e &#x142;&#x105;cze, przed nadaniem kolejnego pakietu.<br>
+Innymi s&#x142;owy, skoro nasz kabel ma d&#x142;ugo&#x15B;&#x107; <strong>n</strong> (<strong>n</strong>-elementowa tablica), to pakiet musi by&#x107; nadawany przez czas odpowiadaj&#x105;cy propagacji przez <strong>2n</strong> kom&#xF3;rek (a skoro 1 krok == propagacja na s&#x105;si&#x119;dni&#x105; kom&#xF3;rk&#x119;, musimy wykona&#x107; <strong>2n</strong> krok&#xF3;w).</p>
+<p>Nasz&#x105; sie&#x107; symulujemy poprzez nast&#x119;pne zmienne:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">  @kwdef mutable <span class="token keyword keyword-struct">struct</span> Simulation
+    cable_size<span class="token punctuation">::</span>Int <span class="token operator">=</span> <span class="token number">0</span>
+    cable<span class="token punctuation">::</span>Vector<span class="token punctuation">{</span>Vector<span class="token punctuation">{</span>NodePacket<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> empty_cable<span class="token punctuation">(</span>cable_size<span class="token punctuation">)</span>
+    available_positions<span class="token punctuation">::</span>Dict<span class="token punctuation">{</span>Int<span class="token punctuation">,</span> Node<span class="token punctuation">}</span> <span class="token operator">=</span> Dict<span class="token punctuation">(</span>i <span class="token operator">=</span><span class="token operator">&gt;</span> Node<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token number">1</span><span class="token punctuation">:</span>cable_size<span class="token punctuation">)</span>
+    broadcasting_nodes<span class="token punctuation">::</span>Vector<span class="token punctuation">{</span>Node<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    nodes_statistics<span class="token punctuation">::</span>Dict<span class="token punctuation">{</span>String<span class="token punctuation">,</span> Dict<span class="token punctuation">{</span>Symbol<span class="token punctuation">,</span> Int<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> Dict<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-end">end</span>
+</pre><ul>
+<li><em>cable_size</em> - ilo&#x15B;&#x107; kom&#xF3;rek w &#x142;&#x105;czu (tablicy),</li>
+<li><em>cable</em> - tablica tablic pakiet&#xF3;w, odpowiadaj&#x105;ca temu, jakie pakiety znajduj&#x105; si&#x119; w danym fragmencie &#x142;&#x105;cza w danym kroku,</li>
+<li><em>available_positions</em> - s&#x142;ownik, przechowuj&#x105;cy w&#x119;z&#x142;y na danych kom&#xF3;rkach &#x142;&#x105;cza,</li>
+<li><em>broadcasting_nodes</em> - tablica w&#x119;z&#x142;&#xF3;w, kt&#xF3;re musza jeszcze nadawa&#x107;,</li>
+<li><em>nodes_statistics</em> - statystyki dotycz&#x105;ce symulacji.</li>
+</ul>
+<p>W danym kroku symulacji:</p>
+<ul>
+<li>propagujemy istniej&#x105;ce syga&#x142;y,</li>
+<li>sprawdzamy nadawanie z danych w&#x119;z&#x142;&#xF3;w, tj. w razie potrzeby przerywamy nadawanie, rozpoczynamy nadawanie, kontynuujemy nadawanie, albo ka&#x17C;emy w&#x119;z&#x142;owi dalej czeka&#x107;, zanim zacznie nadawa&#x107;.</li>
+</ul>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">  <span class="token keyword keyword-function">function</span> step<span class="token punctuation">(</span>sim<span class="token punctuation">::</span>Simulation<span class="token punctuation">,</span> iteration<span class="token punctuation">::</span>Int<span class="token punctuation">)</span>
+    next_state<span class="token punctuation">::</span>Vector<span class="token punctuation">{</span>Vector<span class="token punctuation">{</span>NodePacket<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">=</span> empty_cable<span class="token punctuation">(</span>sim<span class="token punctuation">.</span>cable_size<span class="token punctuation">)</span>
+    propagate_packets<span class="token operator">!</span><span class="token punctuation">(</span>sim<span class="token punctuation">,</span> next_state<span class="token punctuation">)</span>
+    broadcasts<span class="token operator">!</span><span class="token punctuation">(</span>sim<span class="token punctuation">,</span> next_state<span class="token punctuation">,</span> iteration<span class="token punctuation">)</span>
+    sim<span class="token punctuation">.</span>cable <span class="token operator">=</span> next_state
+  <span class="token keyword keyword-end">end</span>
+</pre><h5 class="mume-header" id="31-przebieg-symulacji">3.1 Przebieg symulacji</h5>
+
+<p>W pliku main.jl znajduje si&#x119; przyk&#x142;adowe przygotowanie i uruchomienie symulacji.</p>
+<p>Przyjmijmy nast&#x119;puj&#x105;ce atrybuty:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia">cable_size <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token comment"># W&#x119;z&#x142;y:</span>
+Node<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;A&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> idle_time<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> frames<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Node<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;B&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> idle_time<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> frames<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Node<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;C&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> idle_time<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> frames<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Node<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;D&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">,</span> idle_time<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> frames<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+Node<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">&quot;E&quot;</span><span class="token punctuation">,</span> position<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span> idle_time<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> frames<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><p>Nasza sie&#x107; b&#x119;dzie wygl&#x105;da&#x107; wtedy tak:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>  A       B               D   E       C
+|[ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]|
+</code></pre><p>Uruchomienie symulacji:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>$julia main.jl [mode]
+</code></pre><p>Gdzie mode mo&#x17C;na ustawi&#x107; jako &quot;slow&quot;, dzi&#x119;ki czemu mo&#x17C;emy obserwowa&#x107; symulacje krok po kroku, po wci&#x15B;ni&#x119;ciu klawisza Enter.</p>
+<p>Po wykonanej symulacji program zapisuje jej przebieg do pliku nazwazmiennej_out.log:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Iteration: 1
+A started broadcasting
+B is waiting
+C is waiting
+D started broadcasting
+Cable after 1:
+|[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]|
+
+Iteration: 2
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 2:
+|[A][ ][ ][ ][ ][ ][D][ ][ ][ ]|
+
+Iteration: 3
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 3:
+|[A][A][ ][ ][ ][D][D][D][ ][ ]|
+
+Iteration: 4
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 4:
+|[A][A][A][ ][D][D][D][D][D][ ]|
+
+Iteration: 5
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 5:
+|[A][A][A][A,D][D][D][D][D][D][D]|
+
+Iteration: 6
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 6:
+|[A][A][A,D][A,D][A,D][D][D][D][D][D]|
+
+Iteration: 7
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 7:
+|[A][A,D][A,D][A,D][A,D][A,D][D][D][D][D]|
+
+Iteration: 8
+A detected a collision, sending collision signal
+A continues broadcasting
+B is waiting
+C is waiting
+D detected a collision, sending collision signal
+D continues broadcasting
+Cable after 8:
+|[D,A][A,D][A,D][A,D][A,D][A,D][A,D][D][D][D]|
+
+Iteration: 9
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 9:
+|[D,A][A!,D][A,D][A,D][A,D][A,D][A,D][A,D][D][D]|
+
+Iteration: 10
+A continues broadcasting
+B is waiting
+C is waiting
+D continues broadcasting
+Cable after 10:
+|[D,A][A!,D][A!,D][A,D][A,D][A,D][A,D][A,D][A,D][D]|
+
+[...]
+</code></pre><p>Aby zmieni&#x107; atrybuty symulacji, wystarczy zmieni&#x107; kod w main.jl.</p>
+<p>Funkcja:</p>
+<ul>
+<li>Simulation(cable_size) - tworzy symulacje o danej wielko&#x15B;ci &#x142;&#x105;cza,</li>
+<li>new_node(name, position, idle_time, frames) - tworzy nowy node,</li>
+<li>add_node!(simulation, node) - dodaje node do symulacji,</li>
+<li>run(simulation, slow=mode) - uruchamia symulacje w danym mode (&quot;slow&quot;,albo domy&#x15B;lnie bez przerywania),</li>
+<li>statistics(simulation) - drukuje statystyki w&#x119;z&#x142;&#xF3;w po symulacji.</li>
+</ul>
+<p>Wszystkie funkcje, potrzebne do wykonania symulacji, przechowywane s&#x105; w module <code>CSMA_CD_Simulation</code> w pliku <em>simulation.jl</em>,<br>
+a struktury w&#x119;z&#x142;a i pakietu w pliku <em>node</em>.jl.</p>
+<p>Modu&#x142; <code>CSMA_CD_Simulation</code> eksportuje tak&#x17C;e wektor <code>messages</code> zawieraj&#x105;cy logi po wykonaniu symulacji.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
