@@ -1,1 +1,3 @@
-*.sh
+*.s
+/jsons
+/plots
