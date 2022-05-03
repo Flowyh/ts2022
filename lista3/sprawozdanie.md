@@ -37,6 +37,8 @@ Danymi, które będziemy ramkować, będą sczytane z pliku bajty.
 
 Dla przejrzystości zakodowanych plików wynikowych przyjąłem, że zawsze sczytujemy określoną ilość bitów z pliku, np. `FRAME_SIZE=32`.
 
+Nagłówka w tym zadaniu nie potrzebujemy, dlatego dla ułatwienia go pominąłem.
+
 ##### 2.2 Rozpychanie bitów
 
 "Rozpychanie" bitów polega na dodawaniu zerowego bitu po każdej pięcio-elementowej sekwencji jedynek.
