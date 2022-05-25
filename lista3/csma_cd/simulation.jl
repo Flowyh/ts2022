@@ -65,7 +65,7 @@ module CSMA_CD_Simulation
       for packet_pos in 1:length(fragment)-1
         str *= "$(fragment[packet_pos].node.name)$(fragment[packet_pos].collision_packet == true ? "!" : ""),"
       end
-      if (length(fragment) > 0) str *= "$(fragment[end].node.name)" 
+      if (length(fragment) > 0) str *= "$(fragment[end].node.name)$(fragment[end].collision_packet == true ? "!" : "")" 
       else str *= " " end
       str *= "]"
     end
