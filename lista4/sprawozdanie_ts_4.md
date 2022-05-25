@@ -8,6 +8,8 @@
 | Grupa      | Czw. 15:15-16:55       |
 | Kod grupy  | K03-76c                |
 
+Sprawozdanie znajduje się w repozytorium na moim [githubie](https://github.com/Flowyh/ts2022).
+
 #### 1. Wymagania
 
 Celem zadania było skofigurowanie sieci wirtualnej o podanej topologii w symulatorze GNS3, tak aby:
