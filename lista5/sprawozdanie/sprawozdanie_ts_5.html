@@ -1,0 +1,504 @@
+<!DOCTYPE html><html><head>
+      <title>sprawozdanie_ts_5</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/flowyh/.vscode-server/extensions/shd101wyy.markdown-preview-enhanced-0.6.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="sprawozdanie-lista-nr-5httpscspwreduplbojko2122_2latotsshtml">Sprawozdanie <a href="https://cs.pwr.edu.pl/bojko/2122_2lato/tss.html">Lista nr 5</a></h1>
+
+<table>
+<thead>
+<tr>
+<th>Przedmiot</th>
+<th>Technologie sieciowe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prowadz&#x105;cy</td>
+<td>Mgr in&#x17C;. Dominik Bojko</td>
+</tr>
+<tr>
+<td>Autor</td>
+<td>Maciej Bazela</td>
+</tr>
+<tr>
+<td>Indeks</td>
+<td>261743</td>
+</tr>
+<tr>
+<td>Grupa</td>
+<td>Czw. 15:15-16:55</td>
+</tr>
+<tr>
+<td>Kod grupy</td>
+<td>K03-76c</td>
+</tr>
+</tbody>
+</table>
+<p>Sprawozdanie znajduje si&#x119; w repozytorium na moim <a href="https://github.com/Flowyh/ts2022">githubie</a>.</p>
+<h4 class="mume-header" id="1-wymagania">1. Wymagania</h4>
+
+<p>Na podstawie za&#x142;&#x105;czonego skryptu nale&#x17C;y:</p>
+<ul>
+<li>uruchomi&#x107; go i zastanowi&#x107; si&#x119; jak dzia&#x142;a serwer,</li>
+<li>po&#x142;&#x105;czy&#x107; si&#x119; do niego przy u&#x17C;yciu przegl&#x105;darki internetowej,</li>
+</ul>
+<p>Napisa&#x107; w&#x142;asny serwer oraz:</p>
+<ul>
+<li>wysy&#x142;a&#x107; do klienta nag&#x142;&#xF3;wek jego &#x17C;&#x105;dania</li>
+<li>obs&#x142;ugiwa&#x107; &#x17C;&#x105;dania klienta do prostego tekstowego serwisu WWW (kilka statycznych ston z wzajemnymi odwo&#x142;aniami) zapisanego w pewnym katalogu dysku lokalnego komputera na kt&#xF3;rym uruchomiony jest skrypt serwera,</li>
+<li>przechwyci&#x107; przesy&#x142;ane/przychodz&#x105;ce komunikaty za pomoc&#x105; analizatora sieciowego (F12)</li>
+</ul>
+<h4 class="mume-header" id="11-%C5%9Brodowisko">1.1 &#x15A;rodowisko</h4>
+
+<p>Do napisania serwera u&#x17C;y&#x142;em kombinacji j&#x119;zyka programowania HTML oraz lekko gorszego Julia.</p>
+<h4 class="mume-header" id="2-analiza-skrytpu-serverpl">2. Analiza skrytpu <a href="http://server.pl">server.pl</a></h4>
+
+<pre data-role="codeBlock" data-info="perl" class="language-perl">  <span class="token keyword keyword-use">use</span> HTTP<span class="token punctuation">:</span><span class="token punctuation">:</span>Daemon<span class="token punctuation">;</span>
+  <span class="token keyword keyword-use">use</span> HTTP<span class="token punctuation">:</span><span class="token punctuation">:</span>Status<span class="token punctuation">;</span>
+  <span class="token comment">#use IO::File;</span>
+
+  <span class="token keyword keyword-my">my</span> <span class="token variable">$d</span> <span class="token operator">=</span> HTTP<span class="token punctuation">:</span><span class="token punctuation">:</span>Daemon<span class="token operator">-&gt;</span>new<span class="token punctuation">(</span>
+           LocalAddr <span class="token operator">=&gt;</span> <span class="token string">&apos;lukim&apos;</span><span class="token punctuation">,</span>
+           LocalPort <span class="token operator">=&gt;</span> <span class="token number">4321</span><span class="token punctuation">,</span>
+       <span class="token punctuation">)</span><span class="token operator">||</span> <span class="token keyword keyword-die">die</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-print">print</span> <span class="token string">&quot;Please contact me at: &lt;URL:&quot;</span><span class="token punctuation">,</span> <span class="token variable">$d</span><span class="token operator">-&gt;</span>url<span class="token punctuation">,</span> <span class="token string">&quot;&gt;\n&quot;</span><span class="token punctuation">;</span>
+
+
+  <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span><span class="token keyword keyword-my">my</span> <span class="token variable">$c</span> <span class="token operator">=</span> <span class="token variable">$d</span><span class="token operator">-&gt;</span>accept<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment"># 1)</span>
+      <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span><span class="token keyword keyword-my">my</span> <span class="token variable">$r</span> <span class="token operator">=</span> <span class="token variable">$c</span><span class="token operator">-&gt;</span>get_request<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment"># 2)</span>
+          <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token variable">$r</span><span class="token operator">-&gt;</span>method <span class="token operator">eq</span> <span class="token string">&apos;GET&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+              <span class="token variable">$file_s</span><span class="token operator">=</span> <span class="token string">&quot;./index.html&quot;</span><span class="token punctuation">;</span>    <span class="token comment"># index.html - jakis istniejacy plik</span>
+              <span class="token variable">$c</span><span class="token operator">-&gt;</span>send_file_response<span class="token punctuation">(</span><span class="token variable">$file_s</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+          <span class="token punctuation">}</span>
+          <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+              <span class="token variable">$c</span><span class="token operator">-&gt;</span>send_error<span class="token punctuation">(</span>RC_FORBIDDEN<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+      <span class="token variable">$c</span><span class="token operator">-&gt;</span>close<span class="token punctuation">;</span>
+      <span class="token keyword keyword-undef">undef</span><span class="token punctuation">(</span><span class="token variable">$c</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</pre><p>W za&#x142;&#x105;czonym do listy pliku znajduje si&#x119; prosta implementacja serwera HTML.</p>
+<p>Przy uruchomieniu go w&#x142;&#x105;czany jest serwer daemon na adresie lukim i porcie 4321.</p>
+<p>W p&#x119;tli 1) sprawdzamy, czy serwer mo&#x17C;e akceptowa&#x107; po&#x142;&#x105;czenia od klienta (dop&#xF3;ki mo&#x17C;e akceptowa&#x107;, wykonuj).</p>
+<p>W p&#x119;tli 2) Odbierane jest przychodz&#x105;ce &#x17C;&#x105;danie od klienta z metod&#x105; <strong>GET</strong>. W odpowiedzi wysy&#x142;any jest statyczny plik <strong>index.html</strong>, kt&#xF3;ry mo&#x17C;e by&#x107; wy&#x15B;wietlony w przegl&#x105;darce.</p>
+<p>Je&#x15B;li zapytanie nie jest <strong>GET</strong> odsy&#x142;any jest error <strong>403 Forbidden</strong>.</p>
+<p>Kiedy klient si&#x119; nie wysy&#x142;a ju&#x17C; &#x17C;&#x105;da&#x144;, zamykamy jego po&#x142;&#x105;czenie i dereferujemy zmienn&#x105; <strong>$c</strong>.</p>
+<p>B&#x119;d&#x105;c ca&#x142;kowicie szczery, nie w&#x142;&#x105;cza&#x142;em tego skryptu, bo nigdy nie korzysta&#x142;em z Perla, ale ca&#x142;kiem &#x142;atwo si&#x119; domy&#x15B;li&#x107; o co tu chodzi.</p>
+<h4 class="mume-header" id="3-lepszy-serwer-w-julii">3. Lepszy serwer w Julii</h4>
+
+<p>Napisa&#x142;em podstawowy serwer z u&#x17C;yciem biblioteki HTML w Julii:</p>
+<pre data-role="codeBlock" data-info="julia" class="language-julia"><span class="token keyword keyword-using">using</span> HTTP<span class="token punctuation">,</span> Sockets
+
+<span class="token keyword keyword-const">const</span> ROUTER <span class="token operator">=</span> HTTP<span class="token punctuation">.</span>Router<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Zmie&#x144; skrypt (lub napisz w&#x142;asny serwer w dowolnym j&#x119;zyku programowania) tak aby wysy&#x142;a&#x142; do klienta nag&#x142;&#xF3;wek jego &#x17C;&#x105;dania.</span>
+<span class="token keyword keyword-println">println</span><span class="token punctuation">(</span><span class="token string">&quot;Server running on port 8001 . . .&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-function">function</span> print_header<span class="token punctuation">(</span>header<span class="token punctuation">)</span>
+  result <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+  <span class="token keyword keyword-for">for</span> pair <span class="token keyword keyword-in">in</span> header
+    result <span class="token operator">*=</span> <span class="token string">&quot;$(pair[1]): $(pair[2])\n&quot;</span>
+  <span class="token keyword keyword-end">end</span>
+  <span class="token keyword keyword-return">return</span> result
+<span class="token keyword keyword-end">end</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/header&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">&quot;\n$(print_header(HTTP.Messages.headers(req)))&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Zmie&#x144; skrypt (lub napisz w&#x142;asny serwer w dowolnym j&#x119;zyku programowania)</span>
+<span class="token comment"># tak aby obsugiwa&#x142; &#x17C;&#x105;dania klienta do prostego tekstowego serwisu WWW</span>
+<span class="token comment"># (kilka statycznych ston z wzajemnymi odwo&#x142;aniami) zapisanego w pewnym katalogu dysku lokalnego komputera na kt&#xF3;rym uruchomiony jest skrypt serwera.</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span>read<span class="token punctuation">(</span><span class="token string">&quot;./index.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/papuez&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;https://media.discordapp.net/attachments/868291982768894013/889955128252178512/papiez_call_me.gif&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/fajnefotki&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span>read<span class="token punctuation">(</span><span class="token string">&quot;./fajne_fotki.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/kotek&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span>read<span class="token punctuation">(</span><span class="token string">&quot;./kotekasi.jpg&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/lorem&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span>read<span class="token punctuation">(</span><span class="token string">&quot;./lorem&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/bye&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">&quot;Bye!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>@register<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/*&quot;</span><span class="token punctuation">,</span> req<span class="token operator">-</span><span class="token operator">&gt;</span>HTTP<span class="token punctuation">.</span>Response<span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token string">&quot;Not found!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+HTTP<span class="token punctuation">.</span>serve<span class="token punctuation">(</span>ROUTER<span class="token punctuation">,</span> Sockets<span class="token punctuation">.</span>localhost<span class="token punctuation">,</span> <span class="token number">8001</span><span class="token punctuation">)</span>
+</pre><p>Na samym pocz&#x105;tku dzia&#x142;ania tworzony jest obiekt ROUTER, kt&#xF3;ry odpowiada za przekierowanie &#x17C;&#x105;da&#x144; na dane adresy na odpowiednie pliki html/txt/jpg.</p>
+<p>Na przyk&#x142;ad, zapytania <strong>GET</strong> na <em>localhost:8001/fajnefotki</em> zwr&#xF3;ci w odpowiedzi plik <em>fajne_fotki.html</em>.</p>
+<p>Ka&#x17C;da taka &#x15B;cie&#x17C;ka musi zosta&#x107; zarejestrowana w naszym routerze poprzez u&#x17C;ycie <em>HTTP.@register</em>.</p>
+<p>Na samym ko&#x144;cu uruchamiamy serwer z routerem <strong>ROUTER</strong> na adresie <strong>localhost</strong> na porcie <strong>8001</strong>.</p>
+<h4 class="mume-header" id="31-zwracanie-headera-u%C5%BCytkownikowi">3.1 Zwracanie headera u&#x17C;ytkownikowi</h4>
+
+<p>Aby podpatrzy&#x107; nag&#x142;&#xF3;wek &#x17C;&#x105;dania HTTP Julii trzeba wywo&#x142;a&#x107; funkcj&#x119; <strong>HTTP.Messages.headers()</strong> na obiekcie <strong>req</strong> (request - &#x17C;&#x105;danie).</p>
+<p>Funkcja ta zwraca s&#x142;ownik <em>SubString</em> =&gt; <em>SubString</em>, wi&#x119;c napisa&#x142;em prost&#x105; funkcj&#x119;, kt&#xF3;ra wypisuje pary klucz: warto&#x15B;&#x107; do Stringa i zwracam go klientowi jako odpowied&#x17A; na &#x17C;&#x105;danie.</p>
+<p><img src="./header.png" alt="sent header"><br>
+<em>Rysunek 1. Przyk&#x142;ad odes&#x142;ania headera do klienta.</em></p>
+<p><img src="./real_header.png" alt="real header"><br>
+<em>Rysunek 2. Rzeczywisty nag&#x142;&#xF3;wek (zgadza si&#x119; z tym co odse&#x142;a&#x142;em).</em></p>
+<p>Opis wszystkich warto&#x15B;ci nag&#x142;&#xF3;wka:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+// Opisuje jakie typy danych mo&#x17C;emy przes&#x142;a&#x107; do klienta
+
+Accept-Encoding: gzip, deflate, br
+// Opisuje jakie typy kodowania mo&#x17C;emy u&#x17C;ywa&#x107; przy rozmowie z klientem
+
+Accept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7
+// Opisuje preferencje j&#x119;zykowe klienta
+
+Cache-Control: max-age=0
+// Zawiera dyrektywy kontroluj&#x105;ce proces cachingu przegl&#x105;darki
+// Tutaj informacja max-age=0 oznacza, &#x17C;e po 0 sekundach przekazana w &#x17C;&#x105;daniu informacja staje si&#x119; przedawniona (remains &quot;fresh&quot; for 0 seconds)
+
+Connection: keep-alive
+// Kontroluje spos&#xF3;b po&#x142;&#x105;czenia klient-serwer, keep-alive oznacza, &#x17C;e po&#x142;&#x105;czenie ma by&#x107; trwa&#x142;e i niezamykane
+
+Host: localhost:8001
+// Host i port serwera na kt&#xF3;ry jest wysy&#x142;ane &#x17C;&#x105;danie
+
+Referer: http://localhost:8001/
+// Zawiera ca&#x142;y/cz&#x119;&#x15B;&#x107; adres/u strony, z kt&#xF3;rej wys&#x142;ano &#x17C;&#x105;danie do serwera
+
+sec-ch-ua: &quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;102&quot;, &quot;Google Chrome&quot;;v=&quot;102&quot;
+// &quot;User agent hint&quot; -&gt; zawiera branding user-agenta (ni&#x17C;ej wyja&#x15B;nione co to jest) i informacje o wersjach komponent&#xF3;w przegl&#x105;darki.
+
+sec-ch-ua-mobile: ?0
+// ?0 - u&#x17C;ytkownik nie jest na urz&#x105;dzeniu mobilnym
+// ?1 - u&#x17C;ytkownik jest na urz&#x105;dzeniu mobilnym
+
+sec-ch-ua-platform: &quot;Windows&quot;
+// Jaki system/platform&#x119; u&#x17C;ytkownik wykorzystuje?
+
+Sec-Fetch-Dest: document
+// Wskazuje cel &#x17C;&#x105;dania (o co prosimy? o dokument)
+
+Sec-Fetch-Mode: navigate
+// Wskazuje tryb &#x17C;&#x105;dania
+
+Sec-Fetch-Site: same-origin
+// Wskazuje czy &#x17C;&#x105;danie przysz&#x142;o z tej samej domeny czy nie (same-origin - ta sama domena, cross-site - &#x17C;&#x105;danie z zewn&#x119;trznej strony)
+
+Sec-Fetch-User: ?1
+// &#x17B;&#x105;danie zosta&#x142;o wykonane bezpo&#x15B;rednio przez u&#x17C;ytkownika
+
+Upgrade-Insecure-Requests: 1
+// Wysy&#x142;a informacje do serwera, kt&#xF3;ra oznacza, &#x17C;e klient preferuje szyfrowanie i uwierzytelnianie odpowiedzi
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+(KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36
+// Pozwala serwerom rozpozna&#x107; aplikacj&#x119;, system operacyjny, vendor oraz wersje z kt&#xF3;rych korzysta u&#x17C;ytkownik
+</code></pre><h4 class="mume-header" id="32-prosty-serwis-www">3.2 Prosty serwis WWW</h4>
+
+<p>Zaprojektowa&#x142;em prosta stron&#x119; w j&#x119;zyku programowania HTML, kt&#xF3;ra zawiera proste linki do innych plik&#xF3;w na moim dysku:</p>
+<p><img src="./super_strona.png" alt="super strone"><br>
+<em>Rysunek 3. Super strona.</em></p>
+<p>Zamieszczone linki prowadz&#x105; np. do zadania ze zwracaniem headera, do podstrony, zawieraj&#x105;cej linki do fajnych zdj&#x119;&#x107; (fotek) i jaki&#x15B; przyk&#x142;adowy tekst (lorem ipsum), aby pokaza&#x107;, &#x17C;e mo&#x17C;na odsy&#x142;a&#x107; plain text:</p>
+<p><img src="./fajne_fotki.png" alt="fajne fotki"><br>
+<em>Rysunek 4. Fajne fotki.</em></p>
+<p><img src="./fajny_kotek.png" alt="fajne fotki"><br>
+<em>Rysunek 5. Fajny kotek.</em></p>
+<p><img src="./fajny_header.png" alt="header strona"><br>
+<em>Rysunek 6. Zadanie z headerem.</em></p>
+<p><img src="./lorem.png" alt="lorem"><br>
+<em>Rysunek 7. Lorem.</em></p>
+<h4 class="mume-header" id="33-analizator-sieciowy">3.3 Analizator sieciowy</h4>
+
+<p>Po nacisni&#x119;ciu F12 uruchamia si&#x119; nast&#x119;puj&#x105;ce narz&#x119;dzie:</p>
+<p><img src="./console.png" alt="console"><br>
+<em>Rysunek 8. Dev tools w Google Chrome.</em></p>
+<p>S&#x142;u&#x17C;y ona jako narz&#x119;dzie developerskie, a przydaje si&#x119; szczeg&#xF3;lnie do wy&#x142;apywania wysy&#x142;anych/odbieranych &#x17C;&#x105;da&#x144; na danych stronach.</p>
+<p>Aby poprawnie jej u&#x17C;y&#x107;, trzeba prze&#x142;&#x105;czy&#x107; si&#x119; na karte <em>Network</em>, zaznaczy&#x107; przechwytywanie na <em>All</em> i od&#x15B;wie&#x17C;y&#x107; strone.</p>
+<p>Kiedy to zrobimy, zobaczymy przep&#x142;yw komunikat&#xF3;w:</p>
+<p><img src="./pakiet.png" alt="pakiety"><br>
+<em>Rysunek 9. Widok na requesty.</em></p>
+<p><img src="./request_response.png" alt="request response"><br>
+<em>Rysunek 10. Szczeg&#xF3;&#x142;y danego &#x17C;&#x105;dania.</em></p>
+<p>Mo&#x17C;emy dok&#x142;adnie odczyta&#x107; ka&#x17C;de pole naszego &#x17C;&#x105;dania i zwr&#xF3;conej odpowiedzi.</p>
+<p>Request headers jest opisane wy&#x17C;ej, natomiast poza response headerem pojawia si&#x119; szereg dodatkowych informacji:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Request URL: http://localhost:8001/lorem
+// Na jaki URL przysz&#x142;o &#x17C;&#x105;danie
+
+Request Method: GET
+// Jaka jest metoda &#x17C;&#x105;dania?
+
+Status Code: 200 OK
+// Jaki jest status (kod statusu) odpowiedzi na &#x17C;&#x105;danie
+// 200 - wszystko jest OK
+
+Remote Address: 127.0.0.1:8001
+// Adres serwera (localhost:8001)
+
+Referrer Policy: strict-origin-when-cross-origin
+// Kontroluje ilo&#x15B;&#x107; informacji przesy&#x142;anej w headerze Referer
+</code></pre><p>W Response headerze znajduje si&#x119; informacja co zosta&#x142;o zwr&#xF3;cone: chunked plik (czyli po prostu przekazali&#x15B;my plik z serwera do klienta).</p>
+<p>Normalnie by&#x142;oby tu du&#x17C;o wi&#x119;cej informacji, jak na przyk&#x142;ad informacje o cachingu, serwerze, customowe nag&#x142;&#xF3;wki etc.</p>
+<p>Na innych stronach mojego &quot;serwisu&quot; &#x17C;&#x105;dania wygl&#x105;daj&#x105; praktycznie tak samo.</p>
+<p>Dodatkowo, nad podanymi informacjami znajduje si&#x119; o&#x15B; czasu, kt&#xF3;ra liczy czas w ms od za&#x142;adowania strony. Mo&#x17C;na na niej podpatrze&#x107; kiedy przes&#x142;ano dane &#x17C;&#x105;danie.</p>
+<p>W zak&#x142;adce previes mo&#x17C;na zobaczy&#x107; (jak mo&#x17C;na si&#x119; domy&#x15B;li&#x107;) podgl&#x105;d przes&#x142;anej informacji, response zawiera np. kod, w przypadku kiedy przesy&#x142;amy np. plik .html.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
