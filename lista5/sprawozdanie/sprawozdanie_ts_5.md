@@ -60,7 +60,7 @@ Do napisania serwera użyłem kombinacji języka programowania HTML oraz lekko g
   }
 ```
 
-W załączonym do listy pliku znajduje się prosta implementacja serwera HTML.
+W załączonym do listy pliku znajduje się prosta implementacja serwera HTTP.
 
 Przy uruchomieniu go włączany jest serwer daemon na adresie lukim i porcie 4321.
 
@@ -70,13 +70,13 @@ W pętli 2) Odbierane jest przychodzące żądanie od klienta z metodą **GET**.
 
 Jeśli zapytanie nie jest **GET** odsyłany jest error **403 Forbidden**.
 
-Kiedy klient się nie wysyła już żądań, zamykamy jego połączenie i dereferujemy zmienną **$c**.
+Kiedy klient nie wysyła już żądań, zamykamy jego połączenie i dereferujemy zmienną **$c**.
 
-Będąc całkowicie szczery, nie włączałem tego skryptu, bo nigdy nie korzystałem z Perla, ale całkiem łatwo się domyślić o co tu chodzi.
+Będąc całkowicie szczery, nie włączałem tego skryptu, bo nigdy nie korzystałem z Perla, ale całkiem łatwo się domyśleć, o co tu chodzi.
 
 #### 3. Lepszy serwer w Julii
 
-Napisałem podstawowy serwer z użyciem biblioteki HTML w Julii:
+Napisałem podstawowy serwer z użyciem biblioteki HTTP w Julii:
 
 ```julia
 using HTTP, Sockets
@@ -120,7 +120,7 @@ Na samym końcu uruchamiamy serwer z routerem **ROUTER** na adresie **localhost*
 
 Aby podpatrzyć nagłówek żądania HTTP Julii trzeba wywołać funkcję **HTTP.Messages.headers()** na obiekcie **req** (request - żądanie).
 
-Funkcja ta zwraca słownik _SubString_ => _SubString_, więc napisałem prostą funkcję, która wypisuje pary klucz: wartość do Stringa i zwracam go klientowi jako odpowiedź na żądanie.
+Funkcja ta zwraca słownik _SubString_ => _SubString_, więc napisałem prosty parser, który zapisuje "pole nagłówka: wartość" do Stringa i zwracam go klientowi jako odpowiedź na żądanie.
 
 ![sent header](./header.png)
 _Rysunek 1. Przykład odesłania headera do klienta._
@@ -148,7 +148,7 @@ Connection: keep-alive
 // Kontroluje sposób połączenia klient-serwer, keep-alive oznacza, że połączenie ma być trwałe i niezamykane
 
 Host: localhost:8001
-// Host i port serwera na który jest wysyłane żądanie
+// Host i port serwera, na który jest wysyłane żądanie
 
 Referer: http://localhost:8001/
 // Zawiera cały/część adres/u strony, z której wysłano żądanie do serwera
@@ -161,7 +161,7 @@ sec-ch-ua-mobile: ?0
 // ?1 - użytkownik jest na urządzeniu mobilnym
 
 sec-ch-ua-platform: "Windows"
-// Jaki system/platformę użytkownik wykorzystuje?
+// Jaki system/platformę wykorzystuje użytkownik?
 
 Sec-Fetch-Dest: document
 // Wskazuje cel żądania (o co prosimy? o dokument)
@@ -176,7 +176,7 @@ Sec-Fetch-User: ?1
 // Żądanie zostało wykonane bezpośrednio przez użytkownika
 
 Upgrade-Insecure-Requests: 1
-// Wysyła informacje do serwera, która oznacza, że klient preferuje szyfrowanie i uwierzytelnianie odpowiedzi
+// Wysyła informację do serwera, która oznacza, że klient preferuje szyfrowanie i uwierzytelnianie odpowiedzi
 
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36
@@ -185,12 +185,12 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 
 #### 3.2 Prosty serwis WWW
 
-Zaprojektowałem prosta stronę w języku programowania HTML, która zawiera proste linki do innych plików na moim dysku:
+Zaprojektowałem prostą stronę w języku programowania HTML, która zawiera parę linków do innych plików na moim dysku:
 
-![super strone](./super_strona.png)
+![super strona](./super_strona.png)
 _Rysunek 3. Super strona._
 
-Zamieszczone linki prowadzą np. do zadania ze zwracaniem headera, do podstrony, zawierającej linki do fajnych zdjęć (fotek) i jakiś przykładowy tekst (lorem ipsum), aby pokazać, że można odsyłać plain text:
+Zamieszczone linki prowadzą np. do zadania ze zwracaniem headera, do podstrony zawierającej linki do fajnych zdjęć (fotek) i jakiś przykładowy tekst (lorem ipsum), aby pokazać, że można odsyłać plain text:
 
 ![fajne fotki](./fajne_fotki.png)
 _Rysunek 4. Fajne fotki._
@@ -213,7 +213,7 @@ _Rysunek 8. Dev tools w Google Chrome._
 
 Służy ona jako narzędzie developerskie, a przydaje się szczególnie do wyłapywania wysyłanych/odbieranych żądań na danych stronach.
 
-Aby poprawnie jej użyć, trzeba przełączyć się na karte _Network_, zaznaczyć przechwytywanie na _All_ i odświeżyć strone.
+Aby poprawnie jej użyć, trzeba przełączyć się na karte _Network_, zaznaczyć przechwytywanie na _All_ i odświeżyć stronę.
 
 Kiedy to zrobimy, zobaczymy przepływ komunikatów:
 
@@ -253,4 +253,4 @@ Na innych stronach mojego "serwisu" żądania wyglądają praktycznie tak samo.
 
 Dodatkowo, nad podanymi informacjami znajduje się oś czasu, która liczy czas w ms od załadowania strony. Można na niej podpatrzeć kiedy przesłano dane żądanie.
 
-W zakładce previes można zobaczyć (jak można się domyślić) podgląd przesłanej informacji, response zawiera np. kod, w przypadku kiedy przesyłamy np. plik .html.
+W zakładce previews można zobaczyć (jak można się domyślić) podgląd przesłanej informacji, response zawiera np. kod, w przypadku kiedy przesyłamy np. plik .html.
