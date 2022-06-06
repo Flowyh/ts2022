@@ -340,16 +340,16 @@ pre[data-line] .line-highlight[data-end]:after {
       <span class="token variable">$c</span><span class="token operator">-&gt;</span>close<span class="token punctuation">;</span>
       <span class="token keyword keyword-undef">undef</span><span class="token punctuation">(</span><span class="token variable">$c</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-</pre><p>W za&#x142;&#x105;czonym do listy pliku znajduje si&#x119; prosta implementacja serwera HTML.</p>
+</pre><p>W za&#x142;&#x105;czonym do listy pliku znajduje si&#x119; prosta implementacja serwera HTTP.</p>
 <p>Przy uruchomieniu go w&#x142;&#x105;czany jest serwer daemon na adresie lukim i porcie 4321.</p>
 <p>W p&#x119;tli 1) sprawdzamy, czy serwer mo&#x17C;e akceptowa&#x107; po&#x142;&#x105;czenia od klienta (dop&#xF3;ki mo&#x17C;e akceptowa&#x107;, wykonuj).</p>
 <p>W p&#x119;tli 2) Odbierane jest przychodz&#x105;ce &#x17C;&#x105;danie od klienta z metod&#x105; <strong>GET</strong>. W odpowiedzi wysy&#x142;any jest statyczny plik <strong>index.html</strong>, kt&#xF3;ry mo&#x17C;e by&#x107; wy&#x15B;wietlony w przegl&#x105;darce.</p>
 <p>Je&#x15B;li zapytanie nie jest <strong>GET</strong> odsy&#x142;any jest error <strong>403 Forbidden</strong>.</p>
-<p>Kiedy klient si&#x119; nie wysy&#x142;a ju&#x17C; &#x17C;&#x105;da&#x144;, zamykamy jego po&#x142;&#x105;czenie i dereferujemy zmienn&#x105; <strong>$c</strong>.</p>
-<p>B&#x119;d&#x105;c ca&#x142;kowicie szczery, nie w&#x142;&#x105;cza&#x142;em tego skryptu, bo nigdy nie korzysta&#x142;em z Perla, ale ca&#x142;kiem &#x142;atwo si&#x119; domy&#x15B;li&#x107; o co tu chodzi.</p>
+<p>Kiedy klient nie wysy&#x142;a ju&#x17C; &#x17C;&#x105;da&#x144;, zamykamy jego po&#x142;&#x105;czenie i dereferujemy zmienn&#x105; <strong>$c</strong>.</p>
+<p>B&#x119;d&#x105;c ca&#x142;kowicie szczery, nie w&#x142;&#x105;cza&#x142;em tego skryptu, bo nigdy nie korzysta&#x142;em z Perla, ale ca&#x142;kiem &#x142;atwo si&#x119; domy&#x15B;le&#x107;, o co tu chodzi.</p>
 <h4 class="mume-header" id="3-lepszy-serwer-w-julii">3. Lepszy serwer w Julii</h4>
 
-<p>Napisa&#x142;em podstawowy serwer z u&#x17C;yciem biblioteki HTML w Julii:</p>
+<p>Napisa&#x142;em podstawowy serwer z u&#x17C;yciem biblioteki HTTP w Julii:</p>
 <pre data-role="codeBlock" data-info="julia" class="language-julia"><span class="token keyword keyword-using">using</span> HTTP<span class="token punctuation">,</span> Sockets
 
 <span class="token keyword keyword-const">const</span> ROUTER <span class="token operator">=</span> HTTP<span class="token punctuation">.</span>Router<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -384,7 +384,7 @@ HTTP<span class="token punctuation">.</span>serve<span class="token punctuation"
 <h4 class="mume-header" id="31-zwracanie-headera-u%C5%BCytkownikowi">3.1 Zwracanie headera u&#x17C;ytkownikowi</h4>
 
 <p>Aby podpatrzy&#x107; nag&#x142;&#xF3;wek &#x17C;&#x105;dania HTTP Julii trzeba wywo&#x142;a&#x107; funkcj&#x119; <strong>HTTP.Messages.headers()</strong> na obiekcie <strong>req</strong> (request - &#x17C;&#x105;danie).</p>
-<p>Funkcja ta zwraca s&#x142;ownik <em>SubString</em> =&gt; <em>SubString</em>, wi&#x119;c napisa&#x142;em prost&#x105; funkcj&#x119;, kt&#xF3;ra wypisuje pary klucz: warto&#x15B;&#x107; do Stringa i zwracam go klientowi jako odpowied&#x17A; na &#x17C;&#x105;danie.</p>
+<p>Funkcja ta zwraca s&#x142;ownik <em>SubString</em> =&gt; <em>SubString</em>, wi&#x119;c napisa&#x142;em prosty parser, kt&#xF3;ry zapisuje &quot;pole nag&#x142;&#xF3;wka: warto&#x15B;&#x107;&quot; do Stringa i zwracam go klientowi jako odpowied&#x17A; na &#x17C;&#x105;danie.</p>
 <p><img src="./header.png" alt="sent header"><br>
 <em>Rysunek 1. Przyk&#x142;ad odes&#x142;ania headera do klienta.</em></p>
 <p><img src="./real_header.png" alt="real header"><br>
@@ -407,7 +407,7 @@ Connection: keep-alive
 // Kontroluje spos&#xF3;b po&#x142;&#x105;czenia klient-serwer, keep-alive oznacza, &#x17C;e po&#x142;&#x105;czenie ma by&#x107; trwa&#x142;e i niezamykane
 
 Host: localhost:8001
-// Host i port serwera na kt&#xF3;ry jest wysy&#x142;ane &#x17C;&#x105;danie
+// Host i port serwera, na kt&#xF3;ry jest wysy&#x142;ane &#x17C;&#x105;danie
 
 Referer: http://localhost:8001/
 // Zawiera ca&#x142;y/cz&#x119;&#x15B;&#x107; adres/u strony, z kt&#xF3;rej wys&#x142;ano &#x17C;&#x105;danie do serwera
@@ -420,7 +420,7 @@ sec-ch-ua-mobile: ?0
 // ?1 - u&#x17C;ytkownik jest na urz&#x105;dzeniu mobilnym
 
 sec-ch-ua-platform: &quot;Windows&quot;
-// Jaki system/platform&#x119; u&#x17C;ytkownik wykorzystuje?
+// Jaki system/platform&#x119; wykorzystuje u&#x17C;ytkownik?
 
 Sec-Fetch-Dest: document
 // Wskazuje cel &#x17C;&#x105;dania (o co prosimy? o dokument)
@@ -435,17 +435,17 @@ Sec-Fetch-User: ?1
 // &#x17B;&#x105;danie zosta&#x142;o wykonane bezpo&#x15B;rednio przez u&#x17C;ytkownika
 
 Upgrade-Insecure-Requests: 1
-// Wysy&#x142;a informacje do serwera, kt&#xF3;ra oznacza, &#x17C;e klient preferuje szyfrowanie i uwierzytelnianie odpowiedzi
+// Wysy&#x142;a informacj&#x119; do serwera, kt&#xF3;ra oznacza, &#x17C;e klient preferuje szyfrowanie i uwierzytelnianie odpowiedzi
 
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36
 // Pozwala serwerom rozpozna&#x107; aplikacj&#x119;, system operacyjny, vendor oraz wersje z kt&#xF3;rych korzysta u&#x17C;ytkownik
 </code></pre><h4 class="mume-header" id="32-prosty-serwis-www">3.2 Prosty serwis WWW</h4>
 
-<p>Zaprojektowa&#x142;em prosta stron&#x119; w j&#x119;zyku programowania HTML, kt&#xF3;ra zawiera proste linki do innych plik&#xF3;w na moim dysku:</p>
-<p><img src="./super_strona.png" alt="super strone"><br>
+<p>Zaprojektowa&#x142;em prost&#x105; stron&#x119; w j&#x119;zyku programowania HTML, kt&#xF3;ra zawiera par&#x119; link&#xF3;w do innych plik&#xF3;w na moim dysku:</p>
+<p><img src="./super_strona.png" alt="super strona"><br>
 <em>Rysunek 3. Super strona.</em></p>
-<p>Zamieszczone linki prowadz&#x105; np. do zadania ze zwracaniem headera, do podstrony, zawieraj&#x105;cej linki do fajnych zdj&#x119;&#x107; (fotek) i jaki&#x15B; przyk&#x142;adowy tekst (lorem ipsum), aby pokaza&#x107;, &#x17C;e mo&#x17C;na odsy&#x142;a&#x107; plain text:</p>
+<p>Zamieszczone linki prowadz&#x105; np. do zadania ze zwracaniem headera, do podstrony zawieraj&#x105;cej linki do fajnych zdj&#x119;&#x107; (fotek) i jaki&#x15B; przyk&#x142;adowy tekst (lorem ipsum), aby pokaza&#x107;, &#x17C;e mo&#x17C;na odsy&#x142;a&#x107; plain text:</p>
 <p><img src="./fajne_fotki.png" alt="fajne fotki"><br>
 <em>Rysunek 4. Fajne fotki.</em></p>
 <p><img src="./fajny_kotek.png" alt="fajne fotki"><br>
@@ -460,7 +460,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 <p><img src="./console.png" alt="console"><br>
 <em>Rysunek 8. Dev tools w Google Chrome.</em></p>
 <p>S&#x142;u&#x17C;y ona jako narz&#x119;dzie developerskie, a przydaje si&#x119; szczeg&#xF3;lnie do wy&#x142;apywania wysy&#x142;anych/odbieranych &#x17C;&#x105;da&#x144; na danych stronach.</p>
-<p>Aby poprawnie jej u&#x17C;y&#x107;, trzeba prze&#x142;&#x105;czy&#x107; si&#x119; na karte <em>Network</em>, zaznaczy&#x107; przechwytywanie na <em>All</em> i od&#x15B;wie&#x17C;y&#x107; strone.</p>
+<p>Aby poprawnie jej u&#x17C;y&#x107;, trzeba prze&#x142;&#x105;czy&#x107; si&#x119; na karte <em>Network</em>, zaznaczy&#x107; przechwytywanie na <em>All</em> i od&#x15B;wie&#x17C;y&#x107; stron&#x119;.</p>
 <p>Kiedy to zrobimy, zobaczymy przep&#x142;yw komunikat&#xF3;w:</p>
 <p><img src="./pakiet.png" alt="pakiety"><br>
 <em>Rysunek 9. Widok na requesty.</em></p>
@@ -487,7 +487,7 @@ Referrer Policy: strict-origin-when-cross-origin
 <p>Normalnie by&#x142;oby tu du&#x17C;o wi&#x119;cej informacji, jak na przyk&#x142;ad informacje o cachingu, serwerze, customowe nag&#x142;&#xF3;wki etc.</p>
 <p>Na innych stronach mojego &quot;serwisu&quot; &#x17C;&#x105;dania wygl&#x105;daj&#x105; praktycznie tak samo.</p>
 <p>Dodatkowo, nad podanymi informacjami znajduje si&#x119; o&#x15B; czasu, kt&#xF3;ra liczy czas w ms od za&#x142;adowania strony. Mo&#x17C;na na niej podpatrze&#x107; kiedy przes&#x142;ano dane &#x17C;&#x105;danie.</p>
-<p>W zak&#x142;adce previes mo&#x17C;na zobaczy&#x107; (jak mo&#x17C;na si&#x119; domy&#x15B;li&#x107;) podgl&#x105;d przes&#x142;anej informacji, response zawiera np. kod, w przypadku kiedy przesy&#x142;amy np. plik .html.</p>
+<p>W zak&#x142;adce previews mo&#x17C;na zobaczy&#x107; (jak mo&#x17C;na si&#x119; domy&#x15B;li&#x107;) podgl&#x105;d przes&#x142;anej informacji, response zawiera np. kod, w przypadku kiedy przesy&#x142;amy np. plik .html.</p>
 
       </div>
       
